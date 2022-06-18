@@ -26,7 +26,6 @@ public class RunClass {
         }else{
             System.out.println("A - "+finalGrade);
         }
-       
     }
     
 }
