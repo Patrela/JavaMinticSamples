@@ -1,9 +1,7 @@
 package main;
 
-import basic.Grades;
-import basic.Sales;
-import utility.GraphicMessage;
-import utility.ScannerReader;
+import java.util.Calendar;
+import model.Student;
 
 /**
  *
@@ -15,17 +13,21 @@ public class RunClass {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        
-        int n = ScannerReader.readInt("Number of grades?");
-        double[] grades = Grades.gradesReader(n);
-        double finalGrade = Grades.finalGradeCalculator(grades);
-        
-        if (finalGrade<3){
-            System.out.println("R - "+finalGrade);
-        }else{
-            System.out.println("A - "+finalGrade);
-        }
+
+        Student std1 = new Student();
+        std1.id = "w34343";
+        std1.name = "Carlos";
+        std1.lastName = "Carreño";
+
+        //std1.gender = 'M';
+        //std1.birthDay = Calendar.getInstance();
+        std1.takeSurvey();
+
+        Student std2 = new Student();
+        std2.name = "Jimmy";
+
+        std2.takeSurvey();
+
     }
-    
+
 }
