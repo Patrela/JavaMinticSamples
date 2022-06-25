@@ -6,18 +6,23 @@ package model;
  */
 public class CoffeeMachine {
 
+    private final int ounceValue;
+
     private int coffeeLevel;
-    private int ounceValue;
     private int currentMoney;
     private int receivedMoney;
     private int ounceQuantitySold;
 
-    public CoffeeMachine(int coffeeLevel, int ounceValue) {
+    public CoffeeMachine( int coffeeLevel, int ounceValue ) {
         this.coffeeLevel = coffeeLevel;
         this.ounceValue = ounceValue;
         currentMoney = 0;
         receivedMoney = 0;
         ounceQuantitySold = 0;
+    }
+    
+    public int getCoffeeLevel(){
+        return this.coffeeLevel;
     }
 
     public void receiveMoney(int money) {
@@ -36,7 +41,7 @@ public class CoffeeMachine {
     public int sell() {
         coffeeLevel -= ounceQuantitySold;
         currentMoney += price();
-
+        
         int change = calculateChange();
 
         reset();
